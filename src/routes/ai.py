@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from schemas import PromptIn, PromptOut
-from utils import generate_chat_response
+from ..schemas import PromptIn, PromptOut
+from ..utils import generate_chat_response
 
 router = APIRouter(prefix="/ai", tags=["AI"])
 

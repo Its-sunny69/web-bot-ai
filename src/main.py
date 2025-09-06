@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from decouple import config
 import uvicorn
 
-from routes.ai import router as ai_router
+from .routes.ai import router as ai_router
 
 # Initialize FastAPI app
 app = FastAPI(
