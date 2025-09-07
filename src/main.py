@@ -6,7 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from decouple import config
 import uvicorn
 
-from .routes.ai import router as ai_router
+from src.routes.ai import router as ai_router
+from src.routes.embeddings import router as embeddings_router
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -28,6 +29,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(ai_router, prefix="/api/v1")
+app.include_router(embeddings_router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
